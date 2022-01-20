@@ -95,7 +95,7 @@ class BaseClass {
         profile_graph = driver.findElement(MobileBy.id("ru.sportmaster.app.handh.dev:id/profile_graph"))
         profile_graph.click()
 
-        TimeUnit.SECONDS.sleep(10)
+        TimeUnit.SECONDS.sleep(7)
 
 
 
