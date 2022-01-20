@@ -71,7 +71,6 @@ class BaseClass {
         element3 = driver.findElement(MobileBy.id("ru.sportmaster.app.handh.dev:id/buttonGetCode"))
         element3.click()
 
-        TimeUnit.SECONDS.sleep(1)
 
         lateinit var pinCodeEditText: MobileElement
         pinCodeEditText = driver.findElement(MobileBy.id("ru.sportmaster.app.handh.dev:id/pinCodeEditText"))
@@ -95,10 +94,16 @@ class BaseClass {
         profile_graph = driver.findElement(MobileBy.id("ru.sportmaster.app.handh.dev:id/profile_graph"))
         profile_graph.click()
 
-        TimeUnit.SECONDS.sleep(10)
+        lateinit var buttonEditProfile: MobileElement
+        buttonEditProfile = driver.findElement(MobileBy.id("ru.sportmaster.app.handh.dev:id/buttonEditProfile"))
+        buttonEditProfile.click()
 
+        lateinit var buttonExitProfile: MobileElement
+        buttonExitProfile = driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true))" +
+                ".scrollIntoView(new UiSelector().resourceIdMatches(\".*ru.sportmaster.app.handh.dev:id/buttonLogout.*\"))"))
+        buttonExitProfile.click()
 
-
+        TimeUnit.SECONDS.sleep(20)
 
     }
 
