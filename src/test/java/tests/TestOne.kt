@@ -11,6 +11,7 @@ class TestOne: TestMethods() {
     fun testOne() {
 
         //закрытие сплеша
+
         try {
             clickToElement(
                 locatorType = locatorTypes.xpath,
@@ -52,7 +53,7 @@ class TestOne: TestMethods() {
         )
         TimeUnit.SECONDS.sleep(1)
 
-            //
+            //Открытие профиля и переход к редактированию
         clickToElement(
             locatorType = locatorTypes.id,
             locator = BottomBarMenuLocators().ParofileButton.androidId
@@ -60,17 +61,37 @@ class TestOne: TestMethods() {
 
         clickToElement(
             locatorType = locatorTypes.id,
-            locator = ProfileScreenLocators().buttonEditProfile.androidId
+            locator = AuthorizedUserProfileScreenLocators().buttonEditProfile.androidId
         )
 
 
-        scrollAndClickToElement(
+        // Скролл до логаута
+        scrollToElement(
             locatorType = locatorTypes.id,
             locator = EditProfileScreenLocators().buttonLogout.androidId
         )
-        //buttonExitProfile.click()
 
-        TimeUnit.SECONDS.sleep(10)
+        clickToElement(
+            locatorType = locatorTypes.id,
+            locator = EditProfileScreenLocators().buttonLogout.androidId
+        )
+
+        TimeUnit.SECONDS.sleep(1)
+
+
+        if (checkAvaliableElement (
+                locatorType = locatorTypes.id,
+                locator = NotAuthorizedUserProfileScreenLocators().loginButton.androidId
+            ))
+            tapByCoordinates(160, 2150)
+
+
+
+        TimeUnit.SECONDS.sleep(5)
+
+
 
     }
+
+
 }

@@ -34,8 +34,7 @@ open class BaseClass {
         caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "7200")
         caps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "ru.sportmaster.app.handh.dev")
         caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "ru.sportmaster.app.presentation.start.StartActivity")
-       // caps.setCapability(MobileCapabilityType.APP, "/Users/lector/Downloads/sportmaster-4.0.13.5605_dev_beta.apk")
-       caps.setCapability(MobileCapabilityType.APP, appPath.fullAppLocalPathAndroid)
+        caps.setCapability(MobileCapabilityType.APP, appPath.fullAppLocalPathAndroid)
 
         caps.setCapability(MobileCapabilityType.UDID, "R58N11EQ2BL")
         caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11.0")
