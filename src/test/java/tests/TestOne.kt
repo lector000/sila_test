@@ -85,7 +85,7 @@ class TestOne: TestMethods() {
             ))
             tapByCoordinates(160, 2150)
 
-
+        swipeOnScreen(500, 1500,500, 300)
 
         TimeUnit.SECONDS.sleep(5)
 
